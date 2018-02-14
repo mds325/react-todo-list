@@ -18,16 +18,20 @@
     "url": "https://github.com/mds325/todo-list-react.git"
   },
   "scripts": {
-    "start": "rm -rf ./dist && parcel -o index.html",
+    "start": "rm -rf ./dist && parcel index.html",
     "build": "rm -rf ./dist && parcel build index.html",
     "watch": "rm -rf ./dist && parcel watch index.html"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.5.1",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.6.0",
+    "typescript": "^2.7.2",
+    "node-sass": "^4.7.2"
   },
   "dependencies": {
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
