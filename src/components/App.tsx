@@ -14,8 +14,6 @@ interface AppState {
     todos: TodoModel[]
 }
 
-window['DataService'] = DataService;
-
 export default class App extends React.Component<AppProps, AppState> {
 
     state: AppState = {

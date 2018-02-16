@@ -1,6 +1,10 @@
+$background-color: #fffd6c;
+
 .create-todo {
-  background-color: #fffd6c;
+  background-color: $background-color;
   border-bottom: 2px solid #a8a8a8;
+  display: grid;
+  grid-template-columns: auto 80px;
 
   input {
     font-size: 1.5rem;
@@ -12,12 +16,21 @@
   }
   button {
     border: none;
+    border-left: 1px solid darken($background-color, 30%);
     background: none;
+    display: block;
+    width: 100%;
+    height: 100%;
     font: {
       size: 1rem;
       style: italic;
       weight: bold;
     }
     color: #4f4d25;
+    outline: none;
+
+    &:focus {
+
+    }
   }
 }
