@@ -14,7 +14,7 @@ interface TodoState {
 
 export default class Todo extends React.Component<TodoProps, TodoState> {
 
-    handleTodoClick = ev => this.props.handleToggleState(this.props.model);
+    handleTodoClick = () => this.props.handleToggleState(this.props.model);
 
     render() {
         const model = this.props.model;

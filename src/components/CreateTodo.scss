@@ -6,7 +6,7 @@ $background-color: #fffd6c;
   display: grid;
   grid-template-columns: auto 80px;
 
-  input {
+  .description {
     font-size: 1.5rem;
     padding: 1rem;
     border: none;
@@ -14,7 +14,7 @@ $background-color: #fffd6c;
     outline: none;
     resize: none;
   }
-  button {
+  .add-button {
     border: none;
     border-left: 1px solid darken($background-color, 30%);
     background: none;

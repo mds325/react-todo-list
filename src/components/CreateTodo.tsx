@@ -23,10 +23,11 @@ export default class CreateTodo extends React.Component<CreateTodoProps, CreateT
         return (
             <div className="create-todo">
                 <input
+                    className="description"
                     onChange={this.handleInputChange}
                     value={this.state.text}
                 />
-                <button onClick={this.handleAddTodo}>Add</button>
+                <button className="add-button" onClick={this.handleAddTodo}>Add</button>
             </div>
         );
     }
