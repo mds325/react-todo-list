@@ -1,0 +1,34 @@
+$gutter-color: #b4b4b4;
+$gutter-width: 2rem;
+$gutter-border-width: 0.1rem;
+$gutter-start: ($gutter-width - $gutter-border-width);
+$gutter-end: $gutter-width;
+
+$padding-vertical: 1rem;
+$line-height: 1.8rem;
+$line-border-height: 0.1rem;
+$line-color: #a8a8a8;
+$line-start: ($line-height - $line-border-height);
+$line-end: $line-height;
+
+.todo-list {
+  padding: $padding-vertical $gutter-width;
+  background: {
+    color: #fff;
+    image: linear-gradient(
+            90deg,
+            transparent $gutter-start,
+            $gutter-color $gutter-start,
+            $gutter-color $gutter-end,
+            transparent $gutter-end
+    ),
+    linear-gradient(
+            transparent $line-start,
+            $line-color $line-start,
+            $line-color $line-end,
+            transparent $line-end
+    );
+    size: 100% $line-height;
+    position-y: $padding-vertical;
+  }
+}

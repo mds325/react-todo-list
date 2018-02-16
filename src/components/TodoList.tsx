@@ -2,6 +2,8 @@ import * as React from 'react';
 import Todo from "./Todo";
 import TodoModel from "../models/TodoModel";
 
+import './TodoList.scss';
+
 interface TodoListProps {
     todos: TodoModel[],
     handleToggleState: (model: TodoModel) => void

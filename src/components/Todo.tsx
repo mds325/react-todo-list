@@ -1,6 +1,7 @@
 import * as React from 'react';
-import TodoModel from "../models/TodoModel";
+import TodoModel from '../models/TodoModel';
 
+import './Todo.scss';
 
 interface TodoProps {
     model: TodoModel,
@@ -17,11 +18,15 @@ export default class Todo extends React.Component<TodoProps, TodoState> {
         const model = this.props.model;
 
         return (
-            <div className="todo-item">
-                <input
-                    type="checkbox" checked={ model.completed }
-                    onChange={ ev => this.props.handleToggleState(model) }
-                />
+            <div
+                className={
+                    [
+                        'todo',
+                        model.completed ? 'done' : ''
+                    ].join(' ')
+                }
+                onClick={ev => this.props.handleToggleState(model)}
+            >
                 <span>{ model.description }</span>
             </div>
         );

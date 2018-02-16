@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import './CreateTodo.scss';
+
 interface CreateTodoProps {
     handleAddTodo: (context) => void,
 }
@@ -16,7 +18,7 @@ export default class CreateTodo extends React.Component<CreateTodoProps, CreateT
 
     render() {
         return (
-            <div>
+            <div className="create-todo">
                 <input
                     onChange={ev => this.setState({text: ev.target.value})}
                     value={this.state.text}

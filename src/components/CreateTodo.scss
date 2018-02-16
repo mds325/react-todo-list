@@ -1,0 +1,23 @@
+.create-todo {
+  background-color: #fffd6c;
+  border-bottom: 2px solid #a8a8a8;
+
+  input {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    background: none;
+    outline: none;
+    resize: none;
+  }
+  button {
+    border: none;
+    background: none;
+    font: {
+      size: 1rem;
+      style: italic;
+      weight: bold;
+    }
+    color: #4f4d25;
+  }
+}
