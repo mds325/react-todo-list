@@ -15,14 +15,13 @@ interface TodoListState {
 
 export default class TodoList extends React.Component<TodoListProps, TodoListState> {
 
-    render() {
-        const todos = this.props.todos.map(item => (
-            <Todo key={item.id} model={item} handleToggleState={this.props.handleToggleState} />
-        ));
+    renderTodos = item =>
+        <Todo key={item.id} model={item} handleToggleState={this.props.handleToggleState} />;
 
+    render() {
         return (
             <div className="todo-list">
-                { todos }
+                {this.props.todos.map(this.renderTodos)}
             </div>
         );
     }

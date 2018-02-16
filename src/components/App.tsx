@@ -21,6 +21,7 @@ export default class App extends React.Component<AppProps, AppState> {
     };
 
     handleAddTodo = (context: CreateTodo) => {
+        console.log(this, context);
         let newTodoText: string = context.state.text;
         if (!newTodoText) {
             return;
