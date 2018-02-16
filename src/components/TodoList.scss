@@ -23,6 +23,7 @@ $line-end: $line-height;
             transparent $gutter-end
     ),
     linear-gradient(
+            transparent 0,
             transparent $line-start,
             $line-color $line-start,
             $line-color $line-end,
