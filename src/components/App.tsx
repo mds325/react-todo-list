@@ -4,6 +4,8 @@ import CreateTodo from './CreateTodo';
 import TodoList from './TodoList';
 import DataService from '../services/DataService';
 
+import './App.scss';
+
 interface AppProps {
 
 }
@@ -19,8 +21,12 @@ export default class App extends React.Component<AppProps, AppState> {
     };
 
     handleAddTodo = (context: CreateTodo) => {
+        let newTodoText: string = context.state.text;
+        if (!newTodoText) {
+            return;
+        }
         const todos = this.state.todos;
-        todos.push(new TodoModel(context.state.text));
+        todos.push(new TodoModel(newTodoText));
 
         this.setState({
             todos
@@ -47,7 +53,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
     render() {
         return (
-            <div>
+            <div className="app">
                 <CreateTodo handleAddTodo={this.handleAddTodo} />
                 <TodoList todos={this.state.todos} handleToggleState={this.handleToggleState} />
             </div>

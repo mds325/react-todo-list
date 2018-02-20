@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import './CreateTodo.scss';
+
 interface CreateTodoProps {
     handleAddTodo: (context) => void,
 }
@@ -14,14 +16,18 @@ export default class CreateTodo extends React.Component<CreateTodoProps, CreateT
         text: ''
     };
 
+    handleInputChange = ev => this.setState({text: ev.target.value});
+    handleAddTodo = () => this.props.handleAddTodo(this);
+
     render() {
         return (
-            <div>
+            <div className="create-todo">
                 <input
-                    onChange={ev => this.setState({text: ev.target.value})}
+                    className="description"
+                    onChange={this.handleInputChange}
                     value={this.state.text}
                 />
-                <button onClick={() => this.props.handleAddTodo(this)}>Add</button>
+                <button className="add-button" onClick={this.handleAddTodo}>Add</button>
             </div>
         );
     }

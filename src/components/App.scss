@@ -1,0 +1,32 @@
+$app-padding: 70px;
+
+body {
+  margin: 0;
+  font: {
+    size: 16px;
+    family: sans-serif;
+  }
+  background-color: #ebebeb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: $app-padding auto auto;
+
+  @media(min-width: 768px) {
+    grid-template-columns: auto 615px auto;
+  }
+  .app {
+    grid-row: 2;
+    grid-column: 2;
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  padding-bottom: $app-padding;
+}

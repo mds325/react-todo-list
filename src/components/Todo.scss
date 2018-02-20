@@ -1,0 +1,20 @@
+$indentation: 1rem;
+
+.todo {
+  font-size: 1.2rem;
+  color: #414141;
+  font-weight: bold;
+  padding: 0 0.2rem;
+  line-height: 1.8rem;
+  margin-left: $indentation;
+  text-indent: -$indentation;
+  cursor: pointer;
+  user-select: none;
+
+  &.done {
+    font-weight: normal;
+    text-decoration-line: line-through;
+    font-style: italic;
+    color: #555;
+  }
+}

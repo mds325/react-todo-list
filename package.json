@@ -1,6 +1,6 @@
 {
   "name": "todo-list-react",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Todo List made with React JS",
   "author": {
     "name": "Manuel Sánchez",
@@ -20,19 +20,48 @@
   "scripts": {
     "start": "rm -rf ./dist && parcel index.html",
     "build": "rm -rf ./dist && parcel build index.html",
-    "watch": "rm -rf ./dist && parcel watch index.html"
+    "watch": "rm -rf ./dist && parcel watch index.html",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.9",
+    "@types/jest": "^22.1.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.3.0",
+    "node-sass": "^4.7.2",
     "parcel-bundler": "^1.6.0",
-    "typescript": "^2.7.2",
-    "node-sass": "^4.7.2"
+    "ts-jest": "^22.0.4",
+    "typescript": "^2.7.2"
   },
   "dependencies": {
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
+  },
+  "jest": {
+    "transform": {
+      ".*\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./tests/setup.ts"
+    ]
   }
 }
