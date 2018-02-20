@@ -1,11 +1,12 @@
 import * as React from 'react';
+import * as $ from 'jquery';
 import TodoModel from '../models/TodoModel';
 import CreateTodo from './CreateTodo';
 import TodoList from './TodoList';
 import DataService from '../services/DataService';
+import TitleBar from './TitleBar';
 
 import './App.scss';
-import SettingsService from '../services/SettingsService';
 
 interface AppProps {
 
@@ -15,13 +16,18 @@ interface AppState {
     todos: TodoModel[]
 }
 
+window.DataService = DataService;
+
 export default class App extends React.Component<AppProps, AppState> {
 
     state: AppState = {
         todos: DataService.todos || []
     };
 
-    handleAddTodo = (context: CreateTodo) => {
+    handleAddTodo = (ev, context: CreateTodo) => {
+        ev.preventDefault();
+        $(ev.target).find('.description').trigger('focus');
+
         let newTodoText: string = context.state.text;
         if (!newTodoText) {
             return;
@@ -54,14 +60,8 @@ export default class App extends React.Component<AppProps, AppState> {
 
     render() {
         return [
-            <div className="pencil">
-                <div className="lead"></div>
-                <div className="body">
-                    {SettingsService.Name}
-                </div>
-                <div className="eraser"></div>
-            </div>,
-            <div className="app">
+            <TitleBar key={'title-bar'}/>,
+            <div key={'main-window'} className="app">
                 <CreateTodo handleAddTodo={this.handleAddTodo} />
                 <TodoList todos={this.state.todos} handleToggleState={this.handleToggleState} />
             </div>

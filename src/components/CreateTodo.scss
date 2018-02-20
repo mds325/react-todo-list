@@ -28,9 +28,16 @@ $background-color: #fffd6c;
     }
     color: #4f4d25;
     outline: none;
+    cursor: pointer;
 
+    &:hover {
+      background-color: darken($background-color, 20%);
+    }
     &:focus {
-
+      background-color: darken($background-color, 20%);
+    }
+    &:active {
+      background-color: darken($background-color, 25%);
     }
   }
 }

@@ -39,6 +39,8 @@ body {
     }
 
     .body {
+      display: grid;
+      grid-template-columns: auto 26px;
       background: {
         image: url("../../res/svg/pencil-sprite.svg");
         repeat: repeat-x;
@@ -50,6 +52,24 @@ body {
       font: {
         size: 0.8rem;
         weight: bold;
+      }
+
+      & .settings-button {
+        background: {
+          color: transparent;
+          image: url("../../res/svg/settings.svg");
+          size: 70%;
+          position: center center;
+          repeat: no-repeat;
+        }
+        opacity: .7;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
 
