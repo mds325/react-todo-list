@@ -5,6 +5,7 @@ import TodoList from './TodoList';
 import DataService from '../services/DataService';
 
 import './App.scss';
+import SettingsService from '../services/SettingsService';
 
 interface AppProps {
 
@@ -52,11 +53,18 @@ export default class App extends React.Component<AppProps, AppState> {
     };
 
     render() {
-        return (
+        return [
+            <div className="pencil">
+                <div className="lead"></div>
+                <div className="body">
+                    {SettingsService.Name}
+                </div>
+                <div className="eraser"></div>
+            </div>,
             <div className="app">
                 <CreateTodo handleAddTodo={this.handleAddTodo} />
                 <TodoList todos={this.state.todos} handleToggleState={this.handleToggleState} />
             </div>
-        )
+        ];
     }
 }
